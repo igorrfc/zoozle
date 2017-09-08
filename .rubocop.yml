@@ -1,0 +1,28 @@
+inherit_from: .rubocop_todo.yml
+Rails:
+  Enabled: true
+AllCops:
+  Include:
+    - Rakefile
+    - config.ru
+    - lib/**/*.rake
+  Exclude:
+    - app/controllers/concerns/docs/**/*
+    - bin/setup
+    - config/initializers/**
+    - config/spring.rb
+    - config/environments/development.rb
+    - db/schema.rb
+    - db/migrate/**/*
+    - spec/factories/**/*
+    - Gemfile
+
+Metrics/BlockLength:
+  Max: 90
+  Exclude:
+    - "**/*_spec.rb"
+Metrics/ModuleLength:
+  Exclude:
+    - "**/*_spec.rb"
+Layout/EndOfLine:
+  Enabled: false
