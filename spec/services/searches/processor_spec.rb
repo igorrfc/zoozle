@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Search::Processor do
+describe Searches::Processor do
   describe '.call' do
     subject { described_class.call('foo description') }
 
@@ -8,17 +8,17 @@ describe Search::Processor do
       let!(:search) { create(:search, description: 'foo description') }
 
       it "increments the search's popularity" do
-        expect {
+        expect do
           subject
-        }.to change { search.reload.popularity }.from(0).to(1)
+        end.to change { search.reload.popularity }.from(0).to(1)
       end
     end
 
     context 'when there is no search models with the description received as param' do
-      it 'calls the Redis::IndexSearchWorker' do
-        allow(Redis::IndexSearchWorker).to receive(:perform_async)
+      it 'calls the RedisDb::IndexSearchWorker' do
+        allow(RedisDb::IndexSearchWorker).to receive(:perform_async)
 
-        expect(Redis::IndexSearchWorker)
+        expect(RedisDb::IndexSearchWorker)
           .to receive(:perform_async).with('foo description')
 
         subject

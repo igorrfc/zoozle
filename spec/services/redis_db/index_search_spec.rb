@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-describe Redis::IndexSearch do
+describe RedisDb::IndexSearch do
   describe '.process' do
-    let(:search_suggestions_namespace) { $REDIS_SEARCH_SUGGESTIONS }
-    let(:sorted_sets) { $redis.keys("*#{search_suggestions_namespace}*") }
+    let(:search_suggestions_namespace) { RedisDb::SEARCH_SUGGESTIONS }
+    let(:sorted_sets) { RedisDb::CONN.keys("*#{search_suggestions_namespace}*") }
 
-    before { Redis::IndexSearch.process('description') }
+    before { RedisDb::IndexSearch.process('description') }
 
     it 'creates sorted sets with all variations of the description param' do
       expect(sorted_sets).to include(
@@ -18,13 +18,13 @@ describe Redis::IndexSearch do
         "#{search_suggestions_namespace}:descrip",
         "#{search_suggestions_namespace}:descript",
         "#{search_suggestions_namespace}:descripti",
-        "#{search_suggestions_namespace}:descriptio",
+        "#{search_suggestions_namespace}:descriptio"
       )
     end
 
     it 'creates redis sorted sets pointing to the received description param' do
       sorted_keys_values = sorted_sets.map do |key|
-        $redis.zrevrange(key, 0, 9).first
+        RedisDb::CONN.zrevrange(key, 0, 9).first
       end
 
       expect(

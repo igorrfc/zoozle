@@ -1,3 +1,4 @@
-$redis = Redis.new
-
-$REDIS_SEARCH_SUGGESTIONS = 'search_suggestions'
+module RedisDb
+  CONN = Redis.new
+  SEARCH_SUGGESTIONS = 'search_suggestions'
+end

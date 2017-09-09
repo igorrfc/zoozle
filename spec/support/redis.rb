@@ -1,4 +1,8 @@
 RSpec.configure do |config|
-  config.before(:each) { $redis.flushdb }
-  config.after(:each) { $redis.quit }
+  config.before(:each) do
+    stub_const('RedisDb::CONN', Redis.new)
+    RedisDb::CONN.flushdb
+  end
+
+  config.after(:each) { RedisDb::CONN.quit }
 end
