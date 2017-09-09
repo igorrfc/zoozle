@@ -30,6 +30,7 @@ gem 'turbolinks', '~> 5'
 gem 'redis', '~> 3.0'
 
 gem 'sidekiq'
+gem 'sidekiq-status'
 
 group :development, :test do
   gem 'pry'
