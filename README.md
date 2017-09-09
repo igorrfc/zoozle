@@ -1,5 +1,3 @@
-# Zoozle
-
 The zoozle app is a real-time suggestions solution for search systems. The app's goal is not properly search something and show results, it's just give suggestions according to what have been searched on the platform.
 
 Basically the suggestions and their matching sentences variations are handled by Redis. This way, we have a more faster response time on the search input autocomplete engine.
