@@ -12,15 +12,18 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 
 gem 'sass-rails', '~> 5.0'
+
 gem 'bourbon'
 gem 'neat'
 
-gem 'uglifier', '>= 1.3.0'
-
-gem 'coffee-rails', '~> 4.2'
+gem 'font-awesome-rails'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+
+gem 'coffee-rails', '~> 4.2'
+
+gem 'uglifier', '>= 1.3.0'
 
 gem 'turbolinks', '~> 5'
 
@@ -32,7 +35,6 @@ group :development, :test do
   gem 'pry'
   gem 'pry-rails'
   gem 'pry-remote'
-  gem 'rack-mini-profiler', '~> 0.9.9'
   gem 'foreman', '~> 0.84.0'
   gem 'rubocop', require: false
 end
