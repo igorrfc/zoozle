@@ -3,9 +3,14 @@ module RedisDb
   class IndexSearchWorker
     include Sidekiq::Worker
 
-    def perform(description)
+    def perform(description, remote_ip)
       Search.transaction do
-        Search.create(description: description, popularity: 1)
+        Search.create(
+          description: description,
+          popularity: 1,
+          locations: [Location.new(ip: remote_ip)]
+        )
+
         RedisDb::IndexSearch.process(description)
       end
     end

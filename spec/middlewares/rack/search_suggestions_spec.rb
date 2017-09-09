@@ -16,7 +16,7 @@ describe Rack::SearchSuggestions do
         context 'and there is suggestions for the term received as param' do
           it 'returns the suggestions array' do
             Sidekiq::Testing.inline! do
-              Searches::Processor.call('foo description')
+              Searches::Processor.call('foo description', remote_ip: 'http://remote-ip.com')
             end
 
             response_body = JSON.parse(response.body)
