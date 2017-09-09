@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 20170908191239) do
 
   create_table "searches", force: :cascade do |t|
     t.string   "description"
-    t.integer  "popularity"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "popularity",  default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.index ["description"], name: "index_searches_on_description", using: :btree
   end
 
