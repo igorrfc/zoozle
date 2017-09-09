@@ -5,7 +5,7 @@
 
 ![sep 9 2017 8-44 pm](https://user-images.githubusercontent.com/7783787/30244939-da8f4906-959f-11e7-8261-117dc24896a6.gif)
 
-# [Live demo](zoozle-app.herokuapp.com)
+# [Live demo](https://zoozle-app.herokuapp.com)
 
 The zoozle app is a real-time suggestions solution for search systems. The app's goal is not properly search something and show results, it's just give suggestions according to what have been searched on the platform.
 
