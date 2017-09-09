@@ -1,0 +1,18 @@
+$font-default: 16;
+
+h1,
+h2,
+h3,
+h4 {
+  color: $wild-sand;
+  font-weight: bold;
+}
+
+p,
+li {
+  color: $wild-sand;
+}
+
+.font-secondary {
+  color: $bolder;
+}

@@ -4,13 +4,14 @@
 
 @import 'grid/index';
 
-@import 'abstract/fonts';
 @import 'abstract/colors';
 @import 'abstract/functions';
 
+@import 'components/fonts';
 @import 'components/form/input';
 @import 'components/form/button';
 @import 'components/form/autocomplete_input';
 @import 'components/header';
+@import 'components/list';
 
 @import 'globals';
