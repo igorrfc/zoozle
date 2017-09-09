@@ -8,7 +8,8 @@ module Rack
 
     def call(env)
       if env['PATH_INFO'] == '/search_suggestions'
-        searched_term = env['QUERY_STRING'].to_s.split('term=')[1]
+        request = Rack::Request.new(env)
+        searched_term = request.params['term']
         terms = []
 
         if searched_term.present?
