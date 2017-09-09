@@ -1,12 +1,20 @@
 <div class="container">
   <div class="row">
+    <%= svg 'zoozle_logo' %>
+  </div>
+
+  <div class="row">
     <div class="col-12">
-      <div class="col-6 col-shift-3">
-        <%= form_for @search, method: :get, remote: true, html: { class: 'search-form' } do |f| %>
-          <%= f.text_field :description, id: 'search', class: 'input' %>
-          <%= f.submit %>
-        <% end %>
-      </div>
+      <%= form_for @search, method: :get, remote: true, html: { class: 'search-form' } do |f| %>
+        <div class="col-10">
+          <%= f.text_field :description, id: 'search', placeholder: 'Search something...', class: 'input input--default' %>
+        </div>
+        <div class="col-2">
+          <%= button_tag(type: 'submit', class: 'button button--primary') do %>
+             <%= fa_icon "search" %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
