@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: microblog
+  pool: 5
+  username: postgres
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: microblog_test
+  pool: 5
+  username: postgres
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  database: microblog_production
+  pool: 5
+  username: postgres
