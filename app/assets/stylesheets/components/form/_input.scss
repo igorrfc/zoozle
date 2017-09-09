@@ -1,0 +1,15 @@
+.input {
+  @include span-columns(12);
+  border-radius: 3px;
+  color: $mine-shaft;
+  display: block;
+  padding: 3px;
+  font-size: calculate-rem($font-default);
+  height: calculate-rem(40);
+
+  &--default {
+    background-color: $wild-sand;
+    border-color: transparent;
+    box-shadow: 3px 3px 1px $thunder;
+  }
+}

@@ -1,0 +1,22 @@
+.container {
+  @include span-columns(5);
+  @include shift(3.5);
+  transform: translateY(20%);
+}
+
+.row {
+  @include row();
+  margin-bottom: 20px;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    @include span-columns($i);
+  }
+}
+
+@for $i from 1 through 12 {
+  .col-shift-#{$i} {
+    @include shift($i);
+  }
+}

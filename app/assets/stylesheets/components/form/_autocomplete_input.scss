@@ -1,0 +1,31 @@
+.ui-helper-hidden-accessible {
+  display: none;
+}
+
+.ui-autocomplete,
+.ui-autocomplete li {
+  margin: 0;
+  padding: 0
+}
+
+.ui-autocomplete {
+  background-color: $wild-sand;
+  position: absolute;
+  list-style: none;
+  cursor: default;
+
+  li {
+    padding: 10px;
+
+    &:hover {
+      background-color: $astral;
+      transition: all ease .3s;
+    }
+
+    a {
+      color: $mine-shaft;
+      display: block;
+      font-size: calculate-rem($font-default);
+    }
+  }
+}
