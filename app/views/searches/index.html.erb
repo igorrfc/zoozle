@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-11 col-shift-1">
+    <div class="row">
+      <div class="col-12">
+        <h1>Popular searches</h1>
+      </div>
+    </div>
+
+    <% if @searches.present? %>
+      <div class="col-12">
+        <p>Take a look on the trending topics searched by the Zloozers:</p>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <ul class="list">
+            <% @searches.each do |search|  %>
+              <li>
+                <%= search.description.capitalize %>
+                <span class="font-secondary">(<%= search.popularity %> searches)</span>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    <% else %>
+      <div class="row">
+        <div class="col-12">
+          <p>Ooops ! Looks like everyone knows everything !</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
