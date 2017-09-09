@@ -10,6 +10,12 @@
   </head>
 
   <body>
+    <header class="header">
+      <ul class="row">
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Popular Searches', root_path %></li>
+      </ul>
+    </header>
     <%= yield %>
   </body>
 </html>
