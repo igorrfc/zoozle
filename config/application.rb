@@ -1,4 +1,5 @@
 require_relative 'boot'
+require_relative '../app/middlewares/rack/search_suggestions'
 
 require "rails"
 # Pick the frameworks you want:
@@ -20,5 +21,7 @@ module Zoozle
     # -- all .rb files in that directory are automatically loaded.
     config.autoload_paths << Rails.root.join('app', 'queries')
     config.autoload_paths << Rails.root.join('app', 'middlewares')
+
+    config.middleware.insert_before 0, Rack::SearchSuggestions
   end
 end
