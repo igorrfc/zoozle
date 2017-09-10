@@ -34,7 +34,7 @@ $ cp config/database.yml.sample config/database.yml
 
 Before run your app, you must create the dbs and apply the app's migrations:
 ```sh
-$ cd microblog_api
+$ cd zoozle
 $ rake db:create
 $ rake db:migrate
 ```
